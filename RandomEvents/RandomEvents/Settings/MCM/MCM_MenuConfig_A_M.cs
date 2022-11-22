@@ -839,9 +839,9 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                 #region Bird Songs - Builder
 
                  .CreateGroup(bs_heading, groupBuilder => groupBuilder
-                  .AddInteger("BS1", bs1_text, 0, 30, new ProxyRef<int>(() => BS_minMoraleGain, o => BS_minMoraleGain = o), integerBuilder => integerBuilder
+                  .AddInteger("BS1", bs1_text, 1, 30, new ProxyRef<int>(() => BS_minMoraleGain, o => BS_minMoraleGain = o), integerBuilder => integerBuilder
                           .SetHintText(bs1_hint))
-                  .AddInteger("BS2", bs2_text, 0, 30, new ProxyRef<int>(() => BS_maxMoraleGain, o => BS_maxMoraleGain = o), integerBuilder => integerBuilder
+                  .AddInteger("BS2", bs2_text, 1, 30, new ProxyRef<int>(() => BS_maxMoraleGain, o => BS_maxMoraleGain = o), integerBuilder => integerBuilder
                           .SetHintText(bs2_hint))
                   .AddBool("BS3", bs3_text, new ProxyRef<bool>(() => BS_Disable, o => BS_Disable = o), boolBuilder => boolBuilder
                         .SetHintText(bs3_hint))
@@ -886,13 +886,13 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
 
                 #region Bottoms Up - Builder
                  .CreateGroup(bu_heading, groupBuilder => groupBuilder
-                  .AddInteger("BU1", bu1_text, 0, 30, new ProxyRef<int>(() => BU_minMoraleGain, o => BU_minMoraleGain = o), integerBuilder => integerBuilder
+                  .AddInteger("BU1", bu1_text, 1, 30, new ProxyRef<int>(() => BU_minMoraleGain, o => BU_minMoraleGain = o), integerBuilder => integerBuilder
                           .SetHintText(bu1_hint))
-                  .AddInteger("BU2", bu2_text, 0, 30, new ProxyRef<int>(() => BU_maxMoraleGain, o => BU_maxMoraleGain = o), integerBuilder => integerBuilder
+                  .AddInteger("BU2", bu2_text, 1, 30, new ProxyRef<int>(() => BU_maxMoraleGain, o => BU_maxMoraleGain = o), integerBuilder => integerBuilder
                           .SetHintText(bu2_hint))
-                  .AddInteger("BU3", bu3_text, 0, 30, new ProxyRef<int>(() => BU_minGold, o => BU_minGold = o), integerBuilder => integerBuilder
+                  .AddInteger("BU3", bu3_text, 1, 30, new ProxyRef<int>(() => BU_minGold, o => BU_minGold = o), integerBuilder => integerBuilder
                           .SetHintText(bu3_hint))
-                  .AddInteger("BU4", bu4_text, 0, 300, new ProxyRef<int>(() => BU_maxGold, o => BU_maxGold = o), integerBuilder => integerBuilder
+                  .AddInteger("BU4", bu4_text, 1, 300, new ProxyRef<int>(() => BU_maxGold, o => BU_maxGold = o), integerBuilder => integerBuilder
                          .SetHintText(bu4_hint))
                     .AddBool("BU5", bu5_text, new ProxyRef<bool>(() => BU_Disable, o => BU_Disable = o), boolBuilder => boolBuilder
                         .SetHintText(bu5_hint))
@@ -933,9 +933,9 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
 
                 #region Courier - Builder
                  .CreateGroup(bu_heading, groupBuilder => groupBuilder
-                  .AddInteger("CR1", cr1_text, 0, 30, new ProxyRef<int>(() => CR_minMoraleGain, o => CR_minMoraleGain = o), integerBuilder => integerBuilder
+                  .AddInteger("CR1", cr1_text, 1, 30, new ProxyRef<int>(() => CR_minMoraleGain, o => CR_minMoraleGain = o), integerBuilder => integerBuilder
                           .SetHintText(cr1_hint))
-                  .AddInteger("CR2", cr2_text, 0, 30, new ProxyRef<int>(() => CR_maxMoraleGain, o => CR_maxMoraleGain = o), integerBuilder => integerBuilder
+                  .AddInteger("CR2", cr2_text, 1, 30, new ProxyRef<int>(() => CR_maxMoraleGain, o => CR_maxMoraleGain = o), integerBuilder => integerBuilder
                           .SetHintText(cr2_hint))
                   .AddBool("CR3", cr3_text, new ProxyRef<bool>(() => CR_Disable, o => CR_Disable = o), boolBuilder => boolBuilder
                         .SetHintText(cr3_hint))
@@ -962,13 +962,13 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
 
                 #region Dreaded Sweats - Builder
                  .CreateGroup(ds_heading, groupBuilder => groupBuilder
-                  .AddInteger("DS1", ds1_text, 0, 30, new ProxyRef<int>(() => DS_minMoraleLoss, o => DS_minMoraleLoss = o), integerBuilder => integerBuilder
+                  .AddInteger("DS1", ds1_text, 1, 30, new ProxyRef<int>(() => DS_minMoraleLoss, o => DS_minMoraleLoss = o), integerBuilder => integerBuilder
                           .SetHintText(ds1_hint))
-                  .AddInteger("DS2", ds2_text, 0, 30, new ProxyRef<int>(() => DS_maxMoraleLoss, o => DS_maxMoraleLoss = o), integerBuilder => integerBuilder
+                  .AddInteger("DS2", ds2_text, 1, 30, new ProxyRef<int>(() => DS_maxMoraleLoss, o => DS_maxMoraleLoss = o), integerBuilder => integerBuilder
                           .SetHintText(ds2_hint))
-                  .AddInteger("DS3", ds3_text, 0, 30, new ProxyRef<int>(() => DS_minvictim, o => DS_minvictim = o), integerBuilder => integerBuilder
+                  .AddInteger("DS3", ds3_text, 1, 30, new ProxyRef<int>(() => DS_minvictim, o => DS_minvictim = o), integerBuilder => integerBuilder
                           .SetHintText(ds3_hint))
-                  .AddInteger("DS4", ds4_text, 0, 30, new ProxyRef<int>(() => DS_maxvictim, o => DS_maxvictim = o), integerBuilder => integerBuilder
+                  .AddInteger("DS4", ds4_text, 1, 30, new ProxyRef<int>(() => DS_maxvictim, o => DS_maxvictim = o), integerBuilder => integerBuilder
                          .SetHintText(ds4_hint))
                     .AddBool("DS5", ds5_text, new ProxyRef<bool>(() => DS_Disable, o => DS_Disable = o), boolBuilder => boolBuilder
                         .SetHintText(ds5_hint))
@@ -978,13 +978,13 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
 
                 #region Dysentery - Builder
                  .CreateGroup(dy_heading, groupBuilder => groupBuilder
-                  .AddInteger("DY1", dy1_text, 0, 30, new ProxyRef<int>(() => DY_minMoraleLoss, o => DY_minMoraleLoss = o), integerBuilder => integerBuilder
+                  .AddInteger("DY1", dy1_text, 1, 30, new ProxyRef<int>(() => DY_minMoraleLoss, o => DY_minMoraleLoss = o), integerBuilder => integerBuilder
                           .SetHintText(ds1_hint))
-                  .AddInteger("DY2", dy2_text, 0, 30, new ProxyRef<int>(() => DY_maxMoraleLoss, o => DY_maxMoraleLoss = o), integerBuilder => integerBuilder
+                  .AddInteger("DY2", dy2_text, 1, 30, new ProxyRef<int>(() => DY_maxMoraleLoss, o => DY_maxMoraleLoss = o), integerBuilder => integerBuilder
                           .SetHintText(ds2_hint))
-                  .AddInteger("DY3", dy3_text, 0, 30, new ProxyRef<int>(() => DY_minvictim, o => DY_minvictim = o), integerBuilder => integerBuilder
+                  .AddInteger("DY3", dy3_text, 1, 30, new ProxyRef<int>(() => DY_minvictim, o => DY_minvictim = o), integerBuilder => integerBuilder
                           .SetHintText(ds3_hint))
-                  .AddInteger("DY4", dy4_text, 0, 30, new ProxyRef<int>(() => DY_maxvictim, o => DY_maxvictim = o), integerBuilder => integerBuilder
+                  .AddInteger("DY4", dy4_text, 1, 30, new ProxyRef<int>(() => DY_maxvictim, o => DY_maxvictim = o), integerBuilder => integerBuilder
                          .SetHintText(ds4_hint))
                     .AddBool("DY5", dy5_text, new ProxyRef<bool>(() => DY_Disable, o => DY_Disable = o), boolBuilder => boolBuilder
                         .SetHintText(ds5_hint))

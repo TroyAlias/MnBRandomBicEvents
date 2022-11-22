@@ -582,17 +582,17 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
 
                 #region Refugees - Builder
                   .CreateGroup(rf_heading, groupBuilder => groupBuilder
-                  .AddInteger("RF1", rf1_text, 0, 30, new ProxyRef<int>(() => RF_minSoldiers, o => RF_minSoldiers = o), integerBuilder => integerBuilder
+                  .AddInteger("RF1", rf1_text, 1, 30, new ProxyRef<int>(() => RF_minSoldiers, o => RF_minSoldiers = o), integerBuilder => integerBuilder
                           .SetHintText(rf1_hint))
-                  .AddInteger("RF2", rf2_text, 0, 30, new ProxyRef<int>(() => RF_maxSoldiers, o => RF_maxSoldiers = o), integerBuilder => integerBuilder
+                  .AddInteger("RF2", rf2_text, 1, 30, new ProxyRef<int>(() => RF_maxSoldiers, o => RF_maxSoldiers = o), integerBuilder => integerBuilder
                           .SetHintText(rf2_hint))
-                  .AddInteger("RF3", rf3_text, 0, 20, new ProxyRef<int>(() => RF_minFood, o => RF_minFood = o), integerBuilder => integerBuilder
+                  .AddInteger("RF3", rf3_text, 1, 20, new ProxyRef<int>(() => RF_minFood, o => RF_minFood = o), integerBuilder => integerBuilder
                           .SetHintText(rf3_hint))
-                  .AddInteger("RF4", rf4_text, 0, 20, new ProxyRef<int>(() => RF_maxFood, o => RF_maxFood = o), integerBuilder => integerBuilder
+                  .AddInteger("RF4", rf4_text, 1, 20, new ProxyRef<int>(() => RF_maxFood, o => RF_maxFood = o), integerBuilder => integerBuilder
                          .SetHintText(rf4_hint))
-                  .AddInteger("RF5", rf5_text, 0, 30, new ProxyRef<int>(() => RF_minCaptive, o => RF_minCaptive = o), integerBuilder => integerBuilder
+                  .AddInteger("RF5", rf5_text, 1, 30, new ProxyRef<int>(() => RF_minCaptive, o => RF_minCaptive = o), integerBuilder => integerBuilder
                           .SetHintText(rf5_hint))
-                  .AddInteger("RF6", rf6_text, 0, 30, new ProxyRef<int>(() => RF_maxCaptive, o => RF_maxCaptive = o), integerBuilder => integerBuilder
+                  .AddInteger("RF6", rf6_text, 1, 30, new ProxyRef<int>(() => RF_maxCaptive, o => RF_maxCaptive = o), integerBuilder => integerBuilder
                          .SetHintText(rf6_hint))
                     .AddBool("RF7", rf7_text, new ProxyRef<bool>(() => RF_Disable, o => RF_Disable = o), boolBuilder => boolBuilder
                         .SetHintText(rf7_hint))
