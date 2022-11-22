@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using CryingBuffalo.RandomEvents.Settings.MCM;
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
@@ -17,8 +18,9 @@ namespace CryingBuffalo.RandomEvents.Events
 
 		public BirdSongs() : base(Settings.ModSettings.RandomEvents.BirdSongsData)
 		{
-			minMoraleGain = Settings.ModSettings.RandomEvents.BirdSongsData.minMoraleGain;
-			maxMoraleGain = Settings.ModSettings.RandomEvents.BirdSongsData.maxMoraleGain;
+			minMoraleGain = MCM_MenuConfig_A_M.Instance.BS_minMoraleGain;
+			maxMoraleGain = MCM_MenuConfig_A_M.Instance.BS_maxMoraleGain;
+
 		}
 
 		public override void CancelEvent()
@@ -28,7 +30,7 @@ namespace CryingBuffalo.RandomEvents.Events
 
 		public override bool CanExecuteEvent()
 		{
-			return true;
+			return MCM_MenuConfig_A_M.Instance.BS_Disable == false && MobileParty.MainParty.CurrentSettlement == null && CampaignTime.Now.IsDayTime;
 		}
 
 		public override void StartEvent()
@@ -74,10 +76,9 @@ namespace CryingBuffalo.RandomEvents.Events
 		public readonly int minMoraleGain;
 		public readonly int maxMoraleGain;
 
-		public BirdSongsData(string eventType, float chanceWeight, int minMoraleGain, int maxMoraleGain) : base(eventType, chanceWeight)
+		public BirdSongsData(string eventType, float chanceWeight) : base(eventType, chanceWeight)
 		{
-			this.minMoraleGain = minMoraleGain;
-			this.maxMoraleGain = maxMoraleGain;
+
 		}
 
 		public override BaseEvent GetBaseEvent()

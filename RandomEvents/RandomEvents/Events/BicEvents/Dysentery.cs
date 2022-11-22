@@ -20,10 +20,12 @@ namespace CryingBuffalo.RandomEvents.Events
 
 		public Dysentery() : base(Settings.ModSettings.RandomEvents.DysenteryData)
 		{
-			minMoraleLoss = Settings.ModSettings.RandomEvents.DysenteryData.minMoraleLoss;
-			maxMoraleLoss = Settings.ModSettings.RandomEvents.DysenteryData.maxMoraleLoss;
-			minvictim = Settings.ModSettings.RandomEvents.DysenteryData.minvictim;
-			maxvictim = Settings.ModSettings.RandomEvents.DysenteryData.maxvictim;
+
+			minMoraleLoss = MCM_MenuConfig_A_M.Instance.DY_minMoraleLoss;
+			maxMoraleLoss = MCM_MenuConfig_A_M.Instance.DY_maxMoraleLoss;
+			minvictim = MCM_MenuConfig_A_M.Instance.DY_minvictim;
+			maxvictim = MCM_MenuConfig_A_M.Instance.DY_maxvictim;
+
 		}
 
 		public override void CancelEvent()
@@ -32,7 +34,7 @@ namespace CryingBuffalo.RandomEvents.Events
 
 		public override bool CanExecuteEvent()
 		{
-			return MobileParty.MainParty.MemberRoster.TotalHealthyCount >= 10;
+			return MCM_MenuConfig_A_M.Instance.DY_Disable == false && MobileParty.MainParty.MemberRoster.TotalHealthyCount >= 10 && MobileParty.MainParty.CurrentSettlement == null;
 		}
 
 		public override void StartEvent()
@@ -95,12 +97,9 @@ namespace CryingBuffalo.RandomEvents.Events
 		public readonly int maxvictim;
 
 
-		public DysenteryData(string eventType, float chanceWeight, int minMoraleLoss, int maxMoraleLoss, int minvictim, int maxvictim) : base(eventType, chanceWeight)
+		public DysenteryData(string eventType, float chanceWeight) : base(eventType, chanceWeight)
 		{
-			this.minMoraleLoss = minMoraleLoss;
-			this.maxMoraleLoss = maxMoraleLoss;
-			this.minvictim = minvictim;
-			this.maxvictim = maxvictim;
+
 
 	}
 

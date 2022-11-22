@@ -73,9 +73,21 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         public int RM_MaxMenLost { get; private set; }
 
         #endregion
-        
+
+        #region Refugees - Variables
+
+        public bool RF_Disable { get; private set; }
+        public int RF_minSoldiers { get; private set; }
+        public int RF_maxSoldiers { get; private set; }
+        public int RF_minFood { get; private set; }
+        public int RF_maxFood { get; private set; }
+        public int RF_minCaptive { get; private set; }
+        public int RF_maxCaptive { get; private set; }
+
+        #endregion
+
         #region Robbery - Variables
-        
+
         public bool RO_Disable { get; private set; }
         public int RO_MinGoldLost { get; private set; }
         public int RO_MaxGoldLost { get; private set; }
@@ -83,7 +95,6 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         public int RO_MaxRenownLost { get; private set; }
 
         #endregion
-
         
         #region Runaway Son - Variables
         
@@ -286,11 +297,30 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             var rm4_hint = new TextObject("{=mcm_rm4_hint}Maximum amount of gold that can be lost during this event.").ToString();
             var rm5_text = new TextObject("{=mcm_rm5_text}5. Deactivate event").ToString();
             var rm5_hint = new TextObject("{=mcm_rm5_hint}If you dont want this event to show up you can deactivate it.").ToString();
-            
+
             #endregion
-            
+
+            #region Refugees - Strings
+            var rf_heading = new TextObject("{mcm_dy_heading}Refugees").ToString();
+            var rf1_text = new TextObject("{mcm_dy_text}1.Min Soldiers").ToString();
+            var rf1_hint = new TextObject("{mcm_dy_text}The minimum amount of recruits.").ToString();
+            var rf2_text = new TextObject("{mcm_dy_text}2.Max Soldiers").ToString();
+            var rf2_hint = new TextObject("{mcm_dy_text}The maximum amount of recruits.").ToString();
+            var rf3_text = new TextObject("{mcm_dy_text}3.Min Food").ToString();
+            var rf3_hint = new TextObject("{mcm_dy_text}The minimum amount of Food.").ToString();
+            var rf4_text = new TextObject("{mcm_dy_text}4.Max Food").ToString();
+            var rf4_hint = new TextObject("{mcm_dy_text}The maximum amount of Food.").ToString();
+            var rf5_text = new TextObject("{mcm_dy_text}5.Min Captives").ToString();
+            var rf5_hint = new TextObject("{mcm_dy_text}The minimum amount of Captives.").ToString();
+            var rf6_text = new TextObject("{mcm_dy_text}6.Max Captives").ToString();
+            var rf6_hint = new TextObject("{mcm_dy_text}The maximum amount of Captives.").ToString();
+            var rf7_text = new TextObject("{mcm_dy_text}7. Deactivate event").ToString();
+            var rf7_hint = new TextObject("{mcm_dy_text}If you dont want this event to show up you can deactivate it.").ToString();
+
+            #endregion
+
             #region Robbery - Strings
-            
+
             var ro_heading = new TextObject("{=mcm_ro_heading}Robbery").ToString();
             var ro1_text = new TextObject("{=mcm_ro1_text}1. Min Gold Lost").ToString();
             var ro1_hint = new TextObject("{=mcm_ro1_hint}Minimum amount of gold that can be lost during this event.").ToString();
@@ -547,11 +577,31 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                     .AddBool("PT5", pt5_text, new ProxyRef<bool>(() => PT_Disable, o => PT_Disable = o), boolBuilder => boolBuilder
                         .SetHintText(pt5_hint))
                 )
-                
-                #endregion
+
+            #endregion
+
+                #region Refugees - Builder
+                  .CreateGroup(rf_heading, groupBuilder => groupBuilder
+                  .AddInteger("RF1", rf1_text, 0, 30, new ProxyRef<int>(() => RF_minSoldiers, o => RF_minSoldiers = o), integerBuilder => integerBuilder
+                          .SetHintText(rf1_hint))
+                  .AddInteger("RF2", rf2_text, 0, 30, new ProxyRef<int>(() => RF_maxSoldiers, o => RF_maxSoldiers = o), integerBuilder => integerBuilder
+                          .SetHintText(rf2_hint))
+                  .AddInteger("RF3", rf3_text, 0, 20, new ProxyRef<int>(() => RF_minFood, o => RF_minFood = o), integerBuilder => integerBuilder
+                          .SetHintText(rf3_hint))
+                  .AddInteger("RF4", rf4_text, 0, 20, new ProxyRef<int>(() => RF_maxFood, o => RF_maxFood = o), integerBuilder => integerBuilder
+                         .SetHintText(rf4_hint))
+                  .AddInteger("RF5", rf5_text, 0, 30, new ProxyRef<int>(() => RF_minCaptive, o => RF_minCaptive = o), integerBuilder => integerBuilder
+                          .SetHintText(rf5_hint))
+                  .AddInteger("RF6", rf6_text, 0, 30, new ProxyRef<int>(() => RF_maxCaptive, o => RF_maxCaptive = o), integerBuilder => integerBuilder
+                         .SetHintText(rf6_hint))
+                    .AddBool("RF7", rf7_text, new ProxyRef<bool>(() => RF_Disable, o => RF_Disable = o), boolBuilder => boolBuilder
+                        .SetHintText(rf7_hint))
+
+                    )
+                  #endregion
 
                 #region Robbery - Builder
-                
+
                 .CreateGroup(ro_heading, groupBuilder => groupBuilder
                     .AddInteger("RO1", ro1_text,500,5000, new ProxyRef<int>(() => RO_MinGoldLost, o => RO_MinGoldLost = o), integerBuilder => integerBuilder
                         .SetHintText(ro1_hint))
@@ -584,11 +634,11 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                 
                 .CreateGroup(ss_heading, groupBuilder => groupBuilder
                         .AddInteger("SS1", ss1_text,5,100, new ProxyRef<int>(() => SS_MinMoraleGained, o => SS_MinMoraleGained = o), integerBuilder => integerBuilder
-                            .SetHintText(ss1_hint))
+                        .SetHintText(ss1_hint))
                         .AddInteger("SS2", ss2_text,5,100, new ProxyRef<int>(() => SS_MaxMoraleGained, o => SS_MaxMoraleGained = o), integerBuilder => integerBuilder
-                            .SetHintText(ss2_hint))
+                        .SetHintText(ss2_hint))
                         .AddBool("SS3", ss3_text, new ProxyRef<bool>(() => SS_Disable, o => SS_Disable = o), boolBuilder => boolBuilder
-                            .SetHintText(ss3_hint))
+                        .SetHintText(ss3_hint))
                     )
                     
                     #endregion
@@ -807,7 +857,18 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.RM_MaxMenLost = 50;
 
             #endregion
-            
+
+            #region Refugees
+            Instance.RF_Disable = false;
+            Instance.RF_minSoldiers = 8;
+            Instance.RF_maxSoldiers = 15;
+            Instance.RF_minFood = 3;
+            Instance.RF_maxFood = 5;
+            Instance.RF_minCaptive = 8;
+            Instance.RF_maxCaptive = 15;
+
+            #endregion
+
             #region Robbery
 
             Instance.RO_Disable = false;

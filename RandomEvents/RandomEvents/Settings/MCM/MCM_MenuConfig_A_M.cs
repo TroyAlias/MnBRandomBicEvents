@@ -63,11 +63,19 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         public int BB_MaxGoldToBeggar { get; private set; }
         public int BB_MinRenownGain { get; private set; }
         public int BB_MaxRenownGain { get; private set; }
-        
+
         #endregion
-        
+
+        #region BirdSongs - Variables
+
+        public bool BS_Disable { get; private set; }
+        public int BS_minMoraleGain { get; private set; }
+        public int BS_maxMoraleGain { get; private set; }
+
+        #endregion
+
         #region Birthday Party - Variables
-        
+
         public bool BP_Disable { get; private set; }
         public int BP_MinAttending{ get; private set; }
         public int BP_MaxAttending{ get; private set; }
@@ -83,11 +91,24 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         public int BP_MaxRenownGain{ get; private set; }
         public int BP_MinGoldLooted{ get; private set; }
         public int BP_MaxGoldLooted{ get; private set; }
-        
+
         #endregion
-        
+
+        #region Bottoms Up - Variables
+        public bool BU_Disable { get; private set; }
+
+        public int BU_minMoraleGain { get; private set; }
+
+        public int BU_maxMoraleGain { get; private set; }
+
+        public int BU_minGold { get; private set; }
+
+        public int BU_maxGold { get; private set; }
+
+        #endregion
+
         #region Bumper Crop - Variables
-        
+
         public bool BC_Disable { get; private set; }
         public float BC_CropGainPercent { get; private set; }
         
@@ -105,7 +126,14 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         
         public bool CC_Disable { get; private set; }
         public float CC_CohesionGain { get; private set; }
-        
+
+        #endregion
+
+        #region Courier - Variables
+
+        public bool CR_Disable { get; private set; }
+        public int CR_minMoraleGain { get; private set; }
+        public int CR_maxMoraleGain { get; private set; }
         #endregion
 
         #region Diseased City - Variables
@@ -117,7 +145,27 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         public float DC_PercentLoss{ get; private set; }
 
         #endregion
-        
+
+        #region Dreaded Sweats - Variables
+
+        public bool DS_Disable { get; private set; }
+        public int DS_minMoraleLoss { get; private set; }
+        public int DS_maxMoraleLoss { get; private set; }
+        public int DS_minvictim { get; private set; }
+        public int DS_maxvictim { get; private set; }
+
+        #endregion
+
+        #region Dysentery - Variables
+
+        public bool DY_Disable { get; private set; }
+        public int DY_minMoraleLoss { get; private set; }
+        public int DY_maxMoraleLoss { get; private set; }
+        public int DY_minvictim { get; private set; }
+        public int DY_maxvictim { get; private set; }
+
+        #endregion
+
         #region Eager Troops - Variables
 
         public bool ET_Disable { get; private set; }
@@ -339,11 +387,21 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             var bb4_hint = new TextObject("{=mcm_bb4_hint}Maximum amount of renown to gain.").ToString();
             var bb5_text = new TextObject("{=mcm_bb5_text}5. Deactivate event").ToString();
             var bb5_hint = new TextObject("{=mcm_bb5_hint}If you dont want this event to show up you can deactivate it.").ToString();
-            
+
             #endregion
-            
+
+            #region Bird Songs - Strings
+            var bs_heading = new TextObject("{mcm_bs_heading}Bird Songs").ToString();
+            var bs1_text = new TextObject("{mcm_bs_text}1.Min Morale Gain").ToString();
+            var bs1_hint = new TextObject("{mcm_bs_text}The minimum morale gain.").ToString();
+            var bs2_text = new TextObject("{mcm_bs_text}2.Max Morale Gain").ToString();
+            var bs2_hint = new TextObject("{mcm_bs_text}The maximum morale gain.").ToString();
+            var bs3_text = new TextObject("{mcm_bs_text}3. Deactivate event").ToString();
+            var bs3_hint = new TextObject("{mcm_bs_text}If you dont want this event to show up you can deactivate it.").ToString();
+            #endregion
+
             #region Birthday Party - Strings
-            
+
             var bp_heading = new TextObject("{=mcm_bp_heading}Birthday Party").ToString();
             var bp1_text = new TextObject("{=mcm_bp1_text}1. Min Attending").ToString();
             var bp1_hint = new TextObject("{=mcm_bp1_hint}Minimum amount of guests attending.").ToString();
@@ -375,11 +433,25 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             var bp14_hint = new TextObject("{=mcm_bp14_hint}Minimum amount of gold you can loot from the party.").ToString();
             var bp15_text = new TextObject("{=mcm_bp15_text}15. Deactivate event").ToString();
             var bp15_hint = new TextObject("{=mcm_bp15_hint}If you dont want this event to show up you can deactivate it.").ToString();
-            
+
             #endregion
-            
+
+            #region Bottoms Up - Strings
+            var bu_heading = new TextObject("{mcm_bu_heading}Bottoms Up").ToString();
+            var bu1_text = new TextObject("{mcm_bu_text}1.Min Morale Gain").ToString();
+            var bu1_hint = new TextObject("{mcm_bu_text}The minimum morale gain.").ToString();
+            var bu2_text = new TextObject("{mcm_bu_text}2.Max Morale Gain").ToString();
+            var bu2_hint = new TextObject("{mcm_bu_text}The maximum morale gain.").ToString();
+            var bu3_text = new TextObject("{mcm_bu_text}3.Min gold").ToString();
+            var bu3_hint = new TextObject("{mcm_bu_text}The minimum gold reward.").ToString();
+            var bu4_text = new TextObject("{mcm_bu_text}4.Max gold").ToString();
+            var bu4_hint = new TextObject("{mcm_bu_text}The maximum gold reward.").ToString();
+            var bu5_text = new TextObject("{mcm_bu_text}3. Deactivate event").ToString();
+            var bu5_hint = new TextObject("{mcm_bu_text}If you dont want this event to show up you can deactivate it.").ToString();
+            #endregion
+
             #region Bumper Crop - Strings
-            
+
             var bc_heading = new TextObject("{=mcm_bc_heading}Bumper Crop").ToString();
             var bc1_text = new TextObject("{=mcm_bc1_text}1. Crop % gain").ToString();
             var bc1_hint = new TextObject("{=mcm_bc1_hint}The amount of % the crop yield is increased.").ToString();
@@ -407,7 +479,19 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             var cc1_hint = new TextObject("{=mcm_cc1_hint}The amount of % the cohesion is increased.").ToString();
             var cc2_text = new TextObject("{=mcm_cc2_text}2. Deactivate event").ToString();
             var cc2_hint = new TextObject("{=mcm_cc2_hint}If you dont want this event to show up you can deactivate it.").ToString();
-            
+
+            #endregion
+
+            #region Courier - Strings
+
+            var cr_heading = new TextObject("{mcm_cr_heading}Courier").ToString();
+            var cr1_text = new TextObject("{mcm_bu_text}1.Min Morale Gain").ToString();
+            var cr1_hint = new TextObject("{mcm_bu_text}The minimum morale gain.").ToString();
+            var cr2_text = new TextObject("{mcm_bu_text}2.Max Morale Gain").ToString();
+            var cr2_hint = new TextObject("{mcm_bu_text}The maximum morale gain.").ToString();
+            var cr3_text = new TextObject("{mcm_bu_text}3. Deactivate event").ToString();
+            var cr3_hint = new TextObject("{mcm_bu_text}If you dont want this event to show up you can deactivate it.").ToString();
+
             #endregion
 
             #region Diseased City - Strings
@@ -425,7 +509,36 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             var dc5_hint = new TextObject("{=mcm_dc5_hint}If you dont want this event to show up you can deactivate it.").ToString();
 
             #endregion
-            
+
+            #region Dreaded Sweats - Strings
+            var ds_heading = new TextObject("{mcm_ds_heading}Dreaded Sweats").ToString();
+            var ds1_text = new TextObject("{mcm_ds_text}1.Min Morale Loss").ToString();
+            var ds1_hint = new TextObject("{mcm_ds_text}The minimum morale loss.").ToString();
+            var ds2_text = new TextObject("{mcm_ds_text}2.Max Morale Loss").ToString();
+            var ds2_hint = new TextObject("{mcm_ds_text}The maximum morale loss.").ToString();
+            var ds3_text = new TextObject("{mcm_ds_text}3.Min victims").ToString();
+            var ds3_hint = new TextObject("{mcm_ds_text}The minimum amount of victims.").ToString();
+            var ds4_text = new TextObject("{mcm_ds_text}4.Max victims").ToString();
+            var ds4_hint = new TextObject("{mcm_ds_text}The maximum amount of victims.").ToString();
+            var ds5_text = new TextObject("{mcm_ds_text}3. Deactivate event").ToString();
+            var ds5_hint = new TextObject("{mcm_ds_text}If you dont want this event to show up you can deactivate it.").ToString();
+            #endregion
+
+            #region Dysentery - Strings
+            var dy_heading = new TextObject("{mcm_dy_heading}Dysentery").ToString();
+            var dy1_text = new TextObject("{mcm_dy_text}1.Min Morale Loss").ToString();
+            var dy1_hint = new TextObject("{mcm_dy_text}The minimum morale loss.").ToString();
+            var dy2_text = new TextObject("{mcm_dy_text}2.Max Morale Loss").ToString();
+            var dy2_hint = new TextObject("{mcm_dy_text}The maximum morale loss.").ToString();
+            var dy3_text = new TextObject("{mcm_dy_text}3.Min victims").ToString();
+            var dy3_hint = new TextObject("{mcm_dy_text}The minimum amount of victims.").ToString();
+            var dy4_text = new TextObject("{mcm_dy_text}4.Max victims").ToString();
+            var dy4_hint = new TextObject("{mcm_dy_text}The maximum amount of victims.").ToString();
+            var dy5_text = new TextObject("{mcm_dy_text}3. Deactivate event").ToString();
+            var dy5_hint = new TextObject("{mcm_dy_text}If you dont want this event to show up you can deactivate it.").ToString();
+
+            #endregion
+
             #region Eager Troops - Strings
 
             var et_heading = new TextObject("{=mcm_et_heading}Eager Troops").ToString();
@@ -720,9 +833,22 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                 .AddBool("BB5", bb5_text, new ProxyRef<bool>(() => BB_Disable, o => BB_Disable = o), boolBuilder => boolBuilder
                     .SetHintText(bb5_hint))
                 )
-                
-                #endregion
-                
+
+            #endregion
+
+                #region Bird Songs - Builder
+
+                 .CreateGroup(bs_heading, groupBuilder => groupBuilder
+                  .AddInteger("BS1", bs1_text, 0, 30, new ProxyRef<int>(() => BS_minMoraleGain, o => BS_minMoraleGain = o), integerBuilder => integerBuilder
+                          .SetHintText(bs1_hint))
+                  .AddInteger("BS2", bs2_text, 0, 30, new ProxyRef<int>(() => BS_maxMoraleGain, o => BS_maxMoraleGain = o), integerBuilder => integerBuilder
+                          .SetHintText(bs2_hint))
+                  .AddBool("BS3", bs3_text, new ProxyRef<bool>(() => BS_Disable, o => BS_Disable = o), boolBuilder => boolBuilder
+                        .SetHintText(bs3_hint))
+
+                  )
+            #endregion
+
                 #region Birthday Party - Builder
                 .CreateGroup(bp_heading, groupBuilder => groupBuilder
                 .AddInteger("BP1", bp1_text,10,25, new ProxyRef<int>(() => BP_MinAttending, o => BP_MinAttending = o), integerBuilder => integerBuilder
@@ -756,10 +882,25 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                 .AddBool("BP15", bp15_text, new ProxyRef<bool>(() => BP_Disable, o => BP_Disable = o), boolBuilder => boolBuilder
                     .SetHintText(bp15_hint))
                 )
-                #endregion
-                
+            #endregion
+
+                #region Bottoms Up - Builder
+                 .CreateGroup(bu_heading, groupBuilder => groupBuilder
+                  .AddInteger("BU1", bu1_text, 0, 30, new ProxyRef<int>(() => BU_minMoraleGain, o => BU_minMoraleGain = o), integerBuilder => integerBuilder
+                          .SetHintText(bu1_hint))
+                  .AddInteger("BU2", bu2_text, 0, 30, new ProxyRef<int>(() => BU_maxMoraleGain, o => BU_maxMoraleGain = o), integerBuilder => integerBuilder
+                          .SetHintText(bu2_hint))
+                  .AddInteger("BU3", bu3_text, 0, 30, new ProxyRef<int>(() => BU_minGold, o => BU_minGold = o), integerBuilder => integerBuilder
+                          .SetHintText(bu3_hint))
+                  .AddInteger("BU4", bu4_text, 0, 300, new ProxyRef<int>(() => BU_maxGold, o => BU_maxGold = o), integerBuilder => integerBuilder
+                         .SetHintText(bu4_hint))
+                    .AddBool("BU5", bu5_text, new ProxyRef<bool>(() => BU_Disable, o => BU_Disable = o), boolBuilder => boolBuilder
+                        .SetHintText(bu5_hint))
+                 )
+            #endregion
+
                 #region Bumper Crop - Builder
-                
+
                 .CreateGroup(bc_heading, groupBuilder => groupBuilder
                     .AddFloatingInteger("BC1", bc1_text,0.1f,0.90f, new ProxyRef<float>(() => BC_CropGainPercent, o => BC_CropGainPercent = o), floatBuilder => floatBuilder
                         .SetHintText(bc1_hint))
@@ -788,10 +929,22 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                         .AddBool("CC2", cc2_text, new ProxyRef<bool>(() => CC_Disable, o => CC_Disable = o), boolBuilder => boolBuilder
                             .SetHintText(cc2_hint))
                     )
-                #endregion
-                
+            #endregion
+
+                #region Courier - Builder
+                 .CreateGroup(bu_heading, groupBuilder => groupBuilder
+                  .AddInteger("CR1", cr1_text, 0, 30, new ProxyRef<int>(() => CR_minMoraleGain, o => CR_minMoraleGain = o), integerBuilder => integerBuilder
+                          .SetHintText(cr1_hint))
+                  .AddInteger("CR2", cr2_text, 0, 30, new ProxyRef<int>(() => CR_maxMoraleGain, o => CR_maxMoraleGain = o), integerBuilder => integerBuilder
+                          .SetHintText(cr2_hint))
+                  .AddBool("CR3", cr3_text, new ProxyRef<bool>(() => CR_Disable, o => CR_Disable = o), boolBuilder => boolBuilder
+                        .SetHintText(cr3_hint))
+
+                  )
+            #endregion
+
                 #region Diseased City - Builder
-                
+
                 .CreateGroup(dc_heading, groupBuilder => groupBuilder
                         .AddFloatingInteger("DC1", dc1_text,0.1f,0.75f, new ProxyRef<float>(() => DC_BaseSuccessChance, o => DC_BaseSuccessChance = o), floatBuilder => floatBuilder
                             .SetHintText(dc1_hint))
@@ -804,11 +957,43 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                         .AddBool("DC5", dc5_text, new ProxyRef<bool>(() => DC_Disable, o => DC_Disable = o), boolBuilder => boolBuilder
                             .SetHintText(dc5_hint))
                     )
-                    
-                    #endregion
-                
+
+            #endregion
+
+                #region Dreaded Sweats - Builder
+                 .CreateGroup(ds_heading, groupBuilder => groupBuilder
+                  .AddInteger("DS1", ds1_text, 0, 30, new ProxyRef<int>(() => DS_minMoraleLoss, o => DS_minMoraleLoss = o), integerBuilder => integerBuilder
+                          .SetHintText(ds1_hint))
+                  .AddInteger("DS2", ds2_text, 0, 30, new ProxyRef<int>(() => DS_maxMoraleLoss, o => DS_maxMoraleLoss = o), integerBuilder => integerBuilder
+                          .SetHintText(ds2_hint))
+                  .AddInteger("DS3", ds3_text, 0, 30, new ProxyRef<int>(() => DS_minvictim, o => DS_minvictim = o), integerBuilder => integerBuilder
+                          .SetHintText(ds3_hint))
+                  .AddInteger("DS4", ds4_text, 0, 30, new ProxyRef<int>(() => DS_maxvictim, o => DS_maxvictim = o), integerBuilder => integerBuilder
+                         .SetHintText(ds4_hint))
+                    .AddBool("DS5", ds5_text, new ProxyRef<bool>(() => DS_Disable, o => DS_Disable = o), boolBuilder => boolBuilder
+                        .SetHintText(ds5_hint))
+                    )
+
+            #endregion
+
+                #region Dysentery - Builder
+                 .CreateGroup(dy_heading, groupBuilder => groupBuilder
+                  .AddInteger("DY1", dy1_text, 0, 30, new ProxyRef<int>(() => DY_minMoraleLoss, o => DY_minMoraleLoss = o), integerBuilder => integerBuilder
+                          .SetHintText(ds1_hint))
+                  .AddInteger("DY2", dy2_text, 0, 30, new ProxyRef<int>(() => DY_maxMoraleLoss, o => DY_maxMoraleLoss = o), integerBuilder => integerBuilder
+                          .SetHintText(ds2_hint))
+                  .AddInteger("DY3", dy3_text, 0, 30, new ProxyRef<int>(() => DY_minvictim, o => DY_minvictim = o), integerBuilder => integerBuilder
+                          .SetHintText(ds3_hint))
+                  .AddInteger("DY4", dy4_text, 0, 30, new ProxyRef<int>(() => DY_maxvictim, o => DY_maxvictim = o), integerBuilder => integerBuilder
+                         .SetHintText(ds4_hint))
+                    .AddBool("DY5", dy5_text, new ProxyRef<bool>(() => DY_Disable, o => DY_Disable = o), boolBuilder => boolBuilder
+                        .SetHintText(ds5_hint))
+                    )
+
+                #endregion
+
                 #region Eager Troops - Builder
-                
+
                 .CreateGroup(et_heading, groupBuilder => groupBuilder
                         .AddInteger("ET1", et1_text,5,50, new ProxyRef<int>(() => ET_MinTroopGain, o => ET_MinTroopGain = o), integerBuilder => integerBuilder
                             .SetHintText(et1_hint))
@@ -1089,11 +1274,17 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.BB_MinRenownGain = 10;
             Instance.BB_MaxRenownGain = 20;
             Instance.BB_Disable = false;
-            
+
             #endregion
-            
+
+            #region Bird Songs
+            Instance.BS_Disable = false;
+            Instance.BS_minMoraleGain = 15;
+            Instance.BS_maxMoraleGain = 30;
+            #endregion
+
             #region Birthday Party
-            
+
             Instance.BP_Disable = false;
             Instance.BP_MinAttending = 20;
             Instance.BP_MaxAttending = 60;
@@ -1109,11 +1300,19 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.BP_MaxRenownGain = 30;
             Instance.BP_MinGoldLooted = 500;
             Instance.BP_MaxGoldLooted = 1500;
-            
+
             #endregion
-            
+
+            #region Bottoms Up
+            Instance.BU_Disable = false;
+            Instance.BU_minMoraleGain = 10;
+            Instance.BU_maxMoraleGain = 25;
+            Instance.BU_minGold = 50;
+            Instance.BU_maxGold = 300;
+            #endregion
+
             #region Bumper Crop
-            
+
             Instance.BC_Disable = false;
             Instance.BC_CropGainPercent = 0.66f;
             
@@ -1131,11 +1330,17 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             
             Instance.CC_Disable = false;
             Instance.CC_CohesionGain = 30f;
-            
+
             #endregion
-            
+
+            #region Courier
+            Instance.CR_Disable = false;
+            Instance.CR_minMoraleGain = 15;
+            Instance.CR_maxMoraleGain = 30;
+            #endregion
+
             #region Diseased City
-            
+
             Instance.DC_Disable = false;
             Instance.DC_BaseSuccessChance = 0.50f;
             Instance.DC_HighMedicineChance = 0.75f;
@@ -1143,9 +1348,25 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.DC_PercentLoss = 0.20f;
 
             #endregion
-            
+
+            #region Dreaded Sweats
+            Instance.DS_Disable = false;
+            Instance.DS_minMoraleLoss = 10;
+            Instance.DS_maxMoraleLoss = 25;
+            Instance.DS_minvictim = 3;
+            Instance.DS_maxvictim = 6;
+            #endregion
+
+            #region Dysentery
+            Instance.DS_Disable = false;
+            Instance.DS_minMoraleLoss = 10;
+            Instance.DS_maxMoraleLoss = 25;
+            Instance.DS_minvictim = 3;
+            Instance.DS_maxvictim = 6;
+            #endregion
+
             #region Eager Troops
-            
+
             Instance.ET_Disable = false;
             Instance.ET_MinTroopGain = 10;
             Instance.ET_MaxTroopGain = 35;
@@ -1269,12 +1490,12 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.MO_Disable = false;
 
             #endregion
-            
-            
-            
+
+
+
             #endregion
         }
-        
+
 
         public void Dispose()
         {

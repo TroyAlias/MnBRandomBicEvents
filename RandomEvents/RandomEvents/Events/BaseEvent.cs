@@ -14,6 +14,7 @@ namespace CryingBuffalo.RandomEvents.Events
         /// The code that's called when the event has been completed
         /// </summary>
         public Action onEventCompleted;
+        private DreadedSweats dreadedSweatsData;
 
         /// <summary>
         /// Called to initialise the event
@@ -35,6 +36,11 @@ namespace CryingBuffalo.RandomEvents.Events
         protected BaseEvent(RandomEventData randomEventData)
         {
             this.randomEventData = randomEventData;
+        }
+
+        protected BaseEvent(DreadedSweats dreadedSweatsData)
+        {
+            this.dreadedSweatsData = dreadedSweatsData;
         }
     }
 

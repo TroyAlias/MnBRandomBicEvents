@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\RandomEvents\bin\Win64_Shipping_Client\</OutputPath>
+    <OutputPath>G:\RandomEventsDLL\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -43,22 +43,31 @@ COPY "$(SolutionDir)..\SubModule.xml" "$(TargetDir)..\..\SubModule.xml" /Y</Post
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="TaleWorlds.CampaignSystem">
-      <HintPath>TaleWorlds.CampaignSystem.dll</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.CampaignSystem.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Core">
-      <HintPath>TaleWorlds.Core.dll</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine">
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI">
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.GauntletUI.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.Data">
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.GauntletUI.Data.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Library">
-      <HintPath>TaleWorlds.Library.dll</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.Library.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Localization">
-      <HintPath>TaleWorlds.Localization.dll</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.Localization.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade">
-      <HintPath>TaleWorlds.MountAndBlade.dll</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.MountAndBlade.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.ObjectSystem">
-      <HintPath>TaleWorlds.ObjectSystem.dll</HintPath>
+      <HintPath>G:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_wEditor\TaleWorlds.ObjectSystem.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -68,7 +77,9 @@ COPY "$(SolutionDir)..\SubModule.xml" "$(TargetDir)..\..\SubModule.xml" /Y</Post
     <Compile Include="Events\BeeKind.cs" />
     <Compile Include="Events\BetMoney.cs" />
     <Compile Include="Events\BicEvents\BirdSongs.cs" />
+    <Compile Include="Events\BicEvents\BottomsUp.cs" />
     <Compile Include="Events\BicEvents\Courier.cs" />
+    <Compile Include="Events\BicEvents\DreadedSweats.cs" />
     <Compile Include="Events\BicEvents\Dysentery.cs" />
     <Compile Include="Events\BicEvents\Refugees.cs" />
     <Compile Include="Events\BumperCrop.cs" />

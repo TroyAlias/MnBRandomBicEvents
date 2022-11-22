@@ -33,12 +33,12 @@ namespace CryingBuffalo.RandomEvents.Events.CCEvents
 
         public Refugees() : base(Settings.ModSettings.RandomEvents.RefugeesData)
         {
-            minSoldiers = Settings.ModSettings.RandomEvents.RefugeesData.minSoldiers;
-            maxSoldiers = Settings.ModSettings.RandomEvents.RefugeesData.maxSoldiers;
-            minFood = Settings.ModSettings.RandomEvents.RefugeesData.minFood;
-            maxFood = Settings.ModSettings.RandomEvents.RefugeesData.maxFood;
-            minCaptive = Settings.ModSettings.RandomEvents.RefugeesData.minCaptive;
-            maxCaptive = Settings.ModSettings.RandomEvents.RefugeesData.maxCaptive;
+            minSoldiers = MCM_MenuConfig_N_Z.Instance.RF_minSoldiers;
+            maxSoldiers = MCM_MenuConfig_N_Z.Instance.RF_maxSoldiers;
+            minFood = MCM_MenuConfig_N_Z.Instance.RF_minFood;
+            maxFood = MCM_MenuConfig_N_Z.Instance.RF_maxFood;
+            minCaptive = MCM_MenuConfig_N_Z.Instance.RF_minCaptive;
+            maxCaptive = MCM_MenuConfig_N_Z.Instance.RF_maxCaptive;
         }
 
         public override void CancelEvent()
@@ -47,8 +47,8 @@ namespace CryingBuffalo.RandomEvents.Events.CCEvents
 
         public override bool CanExecuteEvent()
         {
-            
-            return true;
+
+            return MobileParty.MainParty.CurrentSettlement == null && MCM_MenuConfig_N_Z.Instance.RF_Disable == false;
         }
 
         public override void StartEvent()
@@ -386,15 +386,10 @@ namespace CryingBuffalo.RandomEvents.Events.CCEvents
         public readonly int minCaptive;
         public readonly int maxCaptive;
 
-        public RefugeesData(string eventType, float chanceWeight, int minSoldiers, int maxSoldiers, int minFood, int maxFood, int minCaptive, int maxCaptive) : base(eventType,
+        public RefugeesData(string eventType, float chanceWeight) : base(eventType,
             chanceWeight)
         {
-            this.minSoldiers = minSoldiers;
-            this.maxSoldiers = maxSoldiers;
-            this.minFood = minFood;
-            this.maxFood = maxFood;
-            this.minCaptive = minCaptive;
-            this.maxCaptive = maxCaptive;
+
         }
 
         public override BaseEvent GetBaseEvent()

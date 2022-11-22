@@ -18,11 +18,16 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         public float Bee_Kind_Chance{ get; private set; }
         public float Bet_Money_Chance{ get; private set; }
         public float Beggar_Begging_Chance{ get; private set; }
+        public float Bird_Songs_Chance { get; private set; }
         public float Birthday_Party_Chance{ get; private set; }
+        public float Bottoms_Up_Chance { get; private set; }
         public float Bumper_Crop_Chance{ get; private set; }
         public float Bunch_Of_Prisoners_Chance{ get; private set; }
         public float Chatting_Commanders_Chance{ get; private set; }
+        public float Courier_Chance { get; private set; }
         public float Diseased_City_Chance{ get; private set; }
+        public float Dreaded_Sweats_Chance { get; private set; }
+        public float Dysentery_Chance { get; private set; }
         public float Eager_Troops_Chance{ get; private set; }
         public float Exotic_Drinks_Chance{ get; private set; }
         public float Fallen_Soldier_Family_Chance{ get; private set; }
@@ -43,6 +48,7 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         public float Prisoner_Rebellion_Chance{ get; private set; }
         public float Prisoner_Transfer_Chance{ get; private set; }
         public float Red_Moon_Chance{ get; private set; }
+        public float Refugees_Chance { get; private set; }
         public float Robbery_Chance { get; private set; }
         public float Runaway_Son_Chance{ get; private set; }
         public float Secret_Singer_Chance{ get; private set; }
@@ -118,6 +124,12 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             var adv43_text = new TextObject("{=mcm_adv43_text}Prisoner Transfer").ToString();
             var adv44_text = new TextObject("{=mcm_adv44_text}Robbery").ToString();
 
+            var adv45_text = new TextObject("{=mcm_adv45_text}Bird Songs").ToString();
+            var adv46_text = new TextObject("{=mcm_adv46_text}Courier").ToString();
+            var adv47_text = new TextObject("{=mcm_adv47_text}Dysentery").ToString();
+            var adv48_text = new TextObject("{=mcm_adv48_text}Refugees").ToString();
+            var adv49_text = new TextObject("{=mcm_adv49_text}Bottoms Up").ToString();
+            var adv50_text = new TextObject("{=mcm_adv50_text}Dreaded Sweats").ToString();
             #endregion
 
 
@@ -219,8 +231,21 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                             .SetHintText(adv_hint))
                         .AddFloatingInteger ("ADV44", adv44_text,5,100, new ProxyRef<float>(() => Robbery_Chance, o => Robbery_Chance = o), floatBuilder => floatBuilder
                             .SetHintText(adv_hint))
-                    #endregion
-                    
+
+                        .AddFloatingInteger ("ADV45", adv45_text,5, 100, new ProxyRef<float>(() => Bird_Songs_Chance, o => Bird_Songs_Chance = o), floatBuilder => floatBuilder
+                             .SetHintText(adv_hint))
+                        .AddFloatingInteger ("ADV46", adv46_text, 5, 100, new ProxyRef<float>(() => Courier_Chance, o => Courier_Chance = o), floatBuilder => floatBuilder
+                             .SetHintText(adv_hint))
+                        .AddFloatingInteger ("ADV47", adv47_text, 5, 100, new ProxyRef<float>(() => Dysentery_Chance, o => Dysentery_Chance = o), floatBuilder => floatBuilder
+                            .SetHintText(adv_hint))
+                        .AddFloatingInteger ("ADV48", adv48_text, 5, 100, new ProxyRef<float>(() => Refugees_Chance, o => Refugees_Chance = o), floatBuilder => floatBuilder
+                           .SetHintText(adv_hint))
+                        .AddFloatingInteger ("ADV49", adv49_text, 5, 100, new ProxyRef<float>(() => Bottoms_Up_Chance, o => Bottoms_Up_Chance = o), floatBuilder => floatBuilder
+                          .SetHintText(adv_hint))
+                        .AddFloatingInteger ("ADV50", adv50_text, 5, 100, new ProxyRef<float>(() => Dreaded_Sweats_Chance, o => Dreaded_Sweats_Chance = o), floatBuilder => floatBuilder
+                         .SetHintText(adv_hint))
+                #endregion
+
                 );
 
 
@@ -244,11 +269,16 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.Bee_Kind_Chance = 50.0f;
             Instance.Bet_Money_Chance = 50.0f;
             Instance.Beggar_Begging_Chance = 50.0f;
+            Instance.Bird_Songs_Chance = 50.0f;
             Instance.Birthday_Party_Chance = 50.0f;
+            Instance.Bottoms_Up_Chance = 50.0f;
             Instance.Bunch_Of_Prisoners_Chance = 50.0f;
             Instance.Bumper_Crop_Chance = 50.0f;
             Instance.Chatting_Commanders_Chance = 50.0f;
+            Instance.Courier_Chance = 50.0f;
             Instance.Diseased_City_Chance = 50.0f;
+            Instance.Dreaded_Sweats_Chance = 50.0f;
+            Instance.Dysentery_Chance = 50.0f;
             Instance.Eager_Troops_Chance = 50.0f;
             Instance.Exotic_Drinks_Chance = 50.0f;
             Instance.Fallen_Soldier_Family_Chance = 50.0f;
@@ -269,6 +299,7 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.Prisoner_Rebellion_Chance = 50.0f;
             Instance.Prisoner_Transfer_Chance = 50.0f;
             Instance.Red_Moon_Chance = 25.0f;
+            Instance.Refugees_Chance = 50.0f;
             Instance.Robbery_Chance = 50.0f;
             Instance.Runaway_Son_Chance = 50.0f;
             Instance.Secret_Singer_Chance = 50.0f;
