@@ -147,7 +147,7 @@ namespace CryingBuffalo.RandomEvents.Settings
 
         public BottomsUpData BottomsUpData { get; } = new BottomsUpData("BottomsUp", MCM_MenuConfig_Chances.Instance.Bottoms_Up_Chance);
 
-
+        public TravellingmerchantData TravellingMerchantData { get; } = new TravellingmerchantData("TravellingMerchant", MCM_MenuConfig_Chances.Instance.Travelling_Merchant_Chance);
         public DreadedSweatsData DreadedSweatsData { get; } = new DreadedSweatsData("DreadedSweats", MCM_MenuConfig_Chances.Instance.Dreaded_Sweats_Chance);
 
 

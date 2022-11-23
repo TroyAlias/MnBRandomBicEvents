@@ -153,11 +153,19 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
         public bool TP_Disable { get; private set; }
         public int TP_MinSoldiers { get; private set; }
         public float TP_PercentageDifferenceOfCurrentTroop { get; private set; }
-        
+
         #endregion
-        
+
+        #region Travelling Merchant - Variables
+
+        public bool TM_Disable { get; private set; }
+        public int TM_minloot { get; private set; }
+        public int TM_maxloot { get; private set; }
+
+        #endregion
+
         #region Unexcpected Wedding - Variables
-        
+
         public bool UW_Disable { get; private set; }
         public int UW_MinGoldToDonate { get; private set; }
         public int UW_MaxGoldToDonate { get; private set; }
@@ -424,11 +432,24 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             var tp2_hint = new TextObject("{=mcm_tp2_hint}PHILL MUST COMMENT").ToString();
             var tp3_text = new TextObject("{=mcm_tp3_text}3. Deactivate event").ToString();
             var tp3_hint = new TextObject("{=mcm_tp3_hint}If you dont want this event to show up you can deactivate it.").ToString();
-            
+
             #endregion
-            
+
+            #region Travelling Merchant - Strings
+
+            var tm_heading = new TextObject("{=mcm_tp_heading}Travelling Merchant").ToString();
+            var tm1_text = new TextObject("{=mcm_tp1_text}1. Min Loot").ToString();
+            var tm1_hint = new TextObject("{=mcm_tp1_hint}Minimum Amount of Loot").ToString();
+            var tm2_text = new TextObject("{=mcm_tp2_text}2. Max Loot").ToString();
+            var tm2_hint = new TextObject("{=mcm_tp2_hint}Maximum Amount of Loot").ToString();
+            var tm3_text = new TextObject("{=mcm_tp3_text}3. Deactivate event").ToString();
+            var tm3_hint = new TextObject("{=mcm_tp3_hint}If you dont want this event to show up you can deactivate it.").ToString();
+
+
+            #endregion
+
             #region Unexpected Wedding - Strings
-            
+
             var uw_heading = new TextObject("{=mcm_uw_heading}Unexpected Wedding").ToString();
             var uw1_text = new TextObject("{=mcm_uw1_text}1. Min Gold To Give").ToString();
             var uw1_hint = new TextObject("{=mcm_uw1_hint}Minimum amount of gold you give as a gift.").ToString();
@@ -715,9 +736,22 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
                         )
 
                 #endregion
-                
-                #region Unexpected Wedding - Builder
-                
+    
+                #region Travelling Merchant - Builder
+
+                 .CreateGroup(tm_heading, groupBuilder => groupBuilder
+                        .AddInteger("TM1", tm1_text, 1, 3500, new ProxyRef<int>(() => TM_minloot, o => TM_minloot = o), integerBuilder => integerBuilder
+                              .SetHintText(tm1_hint))
+                        .AddInteger("TM2", tm2_text, 1, 20000, new ProxyRef<int>(() => TM_maxloot, o => TM_maxloot = o), integerBuilder => integerBuilder
+                              .SetHintText(tm2_hint))
+                        .AddBool("TM3", tm3_text, new ProxyRef<bool>(() => TM_Disable, o => TM_Disable = o), boolBuilder => boolBuilder
+                            .SetHintText(tm3_hint))
+                        )
+
+                 #endregion
+
+                 #region Unexpected Wedding - Builder
+
                 .CreateGroup(uw_heading, groupBuilder => groupBuilder
                         .AddInteger("UW1", uw1_text,20,500, new ProxyRef<int>(() => UW_MinGoldToDonate, o => UW_MinGoldToDonate = o), integerBuilder => integerBuilder
                             .SetHintText(uw1_hint))
@@ -938,7 +972,15 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.TP_PercentageDifferenceOfCurrentTroop = 0.5f;
 
             #endregion
-            
+
+            #region Travelling Merchant
+
+            Instance.TM_Disable = false;
+            Instance.TM_minloot = 1000;
+            Instance.TM_maxloot = 6000;
+
+            #endregion
+
             #region Unexpected Wedding
 
             Instance.UW_Disable = false;
