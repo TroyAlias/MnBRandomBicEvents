@@ -277,8 +277,8 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.Chatting_Commanders_Chance = 50.0f;
             Instance.Courier_Chance = 50.0f;
             Instance.Diseased_City_Chance = 50.0f;
-            Instance.Dreaded_Sweats_Chance = 50.0f;
-            Instance.Dysentery_Chance = 50.0f;
+            Instance.Dreaded_Sweats_Chance = 35.0f;
+            Instance.Dysentery_Chance = 35.0f;
             Instance.Eager_Troops_Chance = 50.0f;
             Instance.Exotic_Drinks_Chance = 50.0f;
             Instance.Fallen_Soldier_Family_Chance = 50.0f;
@@ -299,7 +299,7 @@ namespace CryingBuffalo.RandomEvents.Settings.MCM
             Instance.Prisoner_Rebellion_Chance = 50.0f;
             Instance.Prisoner_Transfer_Chance = 50.0f;
             Instance.Red_Moon_Chance = 25.0f;
-            Instance.Refugees_Chance = 50.0f;
+            Instance.Refugees_Chance = 30.0f;
             Instance.Robbery_Chance = 50.0f;
             Instance.Runaway_Son_Chance = 50.0f;
             Instance.Secret_Singer_Chance = 50.0f;
